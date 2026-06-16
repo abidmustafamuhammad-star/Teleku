@@ -11,7 +11,7 @@ export const pterodactylConfig = {
 export const appConfig = {
   whatsappGroupLink: "https://chat.whatsapp.com/ExhtQBtiE4n5G0xZCYYFf3", // link group
   nameHost: "Jeeyhosting", // nama host 
-  siteLink: "https://jeeyhosting.my.id", // domain web nya
+  siteLink: "teleku.vercel.app", // domain web nya
   feeMin: 50, //minimal fee
   feeMax: 300, // max fee 
   pay: {
