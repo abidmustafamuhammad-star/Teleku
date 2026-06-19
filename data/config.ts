@@ -1,45 +1,45 @@
 export const pterodactylConfig = {
-  domain: "https://jeeystore.pterokudesu.web.id",
-  apiKey: "ptla_MgBjTdVVbjPgItRB5g2V7mAPykIWdnKh3UF3BByyup4",
-  nests: "1",
-  nestsGame: "2", // ga ubah di isi, ga perlu
-  egg: "16",
-  eggSamp: "16", // ga ubah di isi, ga perlu
-  location: "1", // location panel 
+  domain: process.env.PTERODACTYL_DOMAIN || "https://jeeystore.pterokudesu.web.id",
+  apiKey: process.env.PTERODACTYL_API_KEY || "",
+  nests: process.env.PTERODACTYL_NESTS || "1",
+  nestsGame: "2",
+  egg: process.env.PTERODACTYL_EGG || "16",
+  eggSamp: "16",
+  location: process.env.PTERODACTYL_LOCATION || "1",
 }
 
 export const appConfig = {
-  whatsappGroupLink: "https://chat.whatsapp.com/ExhtQBtiE4n5G0xZCYYFf3", // link group
-  nameHost: "Jeeyhosting", // nama host 
-  siteLink: "teleku.vercel.app", // domain web nya
-  feeMin: 50, //minimal fee
-  feeMax: 300, // max fee 
+  whatsappGroupLink: process.env.WHATSAPP_GROUP_LINK || "https://chat.whatsapp.com/ExhtQBtiE4n5G0xZCYYFf3",
+  nameHost: process.env.NAME_HOST || "Jeeyhosting",
+  siteLink: process.env.SITE_LINK || "teleku.vercel.app",
+  feeMin: 50,
+  feeMax: 300,
   pay: {
-    api_id: "645994a4b200", // Api id Topupku
-    api_key: "d30d9ca957efc4c8081e1013b70ce8c7dcc2a74c", // Apikey Topupku
-    bank: "DA", // bisa kamu ganti ke "DA", "OVO", dll
+    api_id: process.env.TOPUPKU_API_ID || "",
+    api_key: process.env.TOPUPKU_API_KEY || "",
+    bank: process.env.TOPUPKU_BANK || "DA",
   },
   emailSender: {
-    host: "smtp.gmail.com", // Gmail host
-    port: 587, // ga usa di ubah, ga guna 
-    secure: false, // false in
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false,
     auth: {
-      user: "wbot0232@gmail.com", // Gmail buat ngirim ke Gmail buyer 
-      pass: "qdoc bqdb ktse llig", // sandi aplikasi 
+      user: process.env.EMAIL_USER || "",
+      pass: process.env.EMAIL_PASS || "",
     },
-    from: "Kurir Panel <wbot0232@gmail.com>",
-  }, // Smtp email untuk mengirim data
+    from: `Kurir Panel <${process.env.EMAIL_USER || ""}>`,
+  },
   telegram: {
-    botToken: "8663841225:AAFxKo0RQ0_MtVBmZmcLRcWIo4F1L07p4bg", // Token bot father 
-    ownerId: "7804463533", // Id telegram mu
+    botToken: process.env.TELEGRAM_BOT_TOKEN || "",
+    ownerId: process.env.TELEGRAM_OWNER_ID || "",
   },
   mongodb: {
-       uri: "mongodb+srv://ruangotp38_db_user:nYUcrL06sUPVzzmm@cluster0.enoy9w4.mongodb.net/?appName=Cluster0", // url mongo mu
-    dbName: "Jeeyhosting",
+    uri: process.env.MONGODB_URI || "",
+    dbName: process.env.MONGODB_DB_NAME || "Jeeyhosting",
   },
   socialMedia: {
-    whatsapp: "https://wa.me/6283122028438",
-    tiktok: "https://tiktok.com/@bangjeey_dev",
-    instagram: "https://www.intagram.com/bangjeey_dev"
+    whatsapp: process.env.WHATSAPP_URL || "https://wa.me/6283122028438",
+    tiktok: process.env.TIKTOK_URL || "https://tiktok.com/@bangjeey_dev",
+    instagram: process.env.INSTAGRAM_URL || "https://www.instagram.com/bangjeey_dev",
   }
 }
