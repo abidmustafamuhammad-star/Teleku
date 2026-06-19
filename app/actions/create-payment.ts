@@ -26,6 +26,7 @@ export interface PaymentData {
   expirationTime: string
   status: "pending" | "paid" | "completed" | "failed"
   createdAt: string
+  panelType?: string
   panelDetails?: {
     username: string
     password: string
@@ -147,4 +148,4 @@ export async function updatePaymentStatus(
     console.error("Error updating payment status:", error)
     return false
   }
-  }
+  }+
