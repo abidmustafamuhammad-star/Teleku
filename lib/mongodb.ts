@@ -1,14 +1,14 @@
 import { MongoClient } from "mongodb"
 import { appConfig } from "@/data/config"
 
-const uri = appConfig.mongodb.uri
+const uri = appConfig.mongodb.uri || ""
 const options = {}
 
 let client: MongoClient
 let clientPromise: Promise<MongoClient>
 
-if (!appConfig.mongodb.uri) {
-  throw new Error("Please add your MongoDB URI to .env.local")
+if (!uri) {
+  throw new Error("Please add your MongoDB URI to environment variables")
 }
 
 if (process.env.NODE_ENV === "development") {
