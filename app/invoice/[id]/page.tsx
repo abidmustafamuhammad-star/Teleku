@@ -51,6 +51,10 @@ export default async function InvoicePage({ params }: { params: { id: string } }
               qrImageUrl={payment.qrImageUrl}
               expirationTime={payment.expirationTime}
               status={payment.status}
+              username={payment.username}
+              email={payment.email}
+              planId={payment.planId}
+              createdAt={payment.createdAt}
             />
           </div>
         </div>
